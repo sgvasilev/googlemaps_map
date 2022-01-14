@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Выставляем основные настройки по-умолчанию для body */
+body {
   min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.userrouting {
+  width: 90%;
+  height: 90vh;
+  gap: 40px;
+  margin: 0 auto;
+  padding-top: 32px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+}
+@media screen and (max-width: 500px) {
+  .userrouting {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.userrouting__form {
+  width: 350px;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 8px;
+}
+.userrouting__input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid rgb(200, 220, 200);
+  border-radius: 5px;
+}
+.userrouting__button {
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+}
+.userrouting__markers {
+  pointer-events: none;
+  padding: 2px;
+  display: flex;
+  border: 2px solid #4f4f4f;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.draggable {
+  cursor: grab;
+  background-color: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.marginFix {
+  margin: 2px 0 0 0;
+  list-style: none;
 }
