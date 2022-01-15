@@ -6,16 +6,17 @@ import { UserMarkersProvider } from "./context/userMarkers"
 import MapLoader from "./components/MapLoader"
 
 function App() {
-  useEffect(() => {
-    let data = MapLoader()
-    console.log(data, "data")
-  }, [])
-  console.log("app render")
+  let map
+  const myMapLoader = async () => {
+    return (map = await MapLoader())
+  }
+  let data = myMapLoader()
+
   return (
     <UserMarkersProvider>
       <section className="userrouting">
         <Form />
-        <Map />
+        <Map data={data} />
       </section>
     </UserMarkersProvider>
   )

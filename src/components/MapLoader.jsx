@@ -27,6 +27,7 @@ export default function MapLoader() {
         fields: ["name"],
       }
     )
+    return map
   })
-  return data
+  return map
 }

@@ -15,8 +15,20 @@ const Container = styled.div`
   }
 `
 
-const Map = () => {
+const Map = ({ data }) => {
   //const { userMarkers } = useContext(userMarkerContext)
+  const myMarker = async () => {
+    let google = window.google
+    const a = await data
+    console.log(a)
+    const markerino = new google.maps.Marker({
+      position: { lat: -33.89, lng: 151.274 },
+      map: data,
+    })
+  }
+  setTimeout(() => {
+    myMarker()
+  }, 1000)
   console.log("map render")
   return (
     <Container>
