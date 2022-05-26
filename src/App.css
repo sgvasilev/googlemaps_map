@@ -54,15 +54,16 @@ img {
 }
 
 .userrouting {
+  max-width: 1920px;
   width: 90%;
   height: 90vh;
-  gap: 40px;
+  gap: 8px;
   margin: 0 auto;
   padding-top: 32px;
   display: flex;
   flex-direction: row;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
   .userrouting {
     display: flex;
     flex-direction: column;
@@ -76,7 +77,7 @@ img {
 }
 .userrouting__input {
   width: 100%;
-  padding: 12px 20px;
+  padding: 12px 8px;
   border: 2px solid rgb(200, 220, 200);
   border-radius: 5px;
 }
@@ -101,3 +102,29 @@ img {
   margin: 2px 0 0 0;
   list-style: none;
 }
+
+.autocomplete__data {
+  position: relative;
+  display: inline-block;
+}
+
+.userrouting__suggestions {
+  padding: 8px 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* .userrouting__form_stylefix div:first-of-type {
+  padding: 4px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-top: none;
+}
+
+.userrouting__form_stylefix div:last-of-type {
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+} */

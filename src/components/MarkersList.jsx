@@ -1,12 +1,11 @@
 import React, { useContext } from "react"
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
-import Card from "./Card"
+import Card from "./Card/Card"
 import "../App.css"
 import userMarkerContext from "../context/userMarkers"
 
 const MarkersList = () => {
-  const { setMarker, marker, userMarkers, addMarker, setUserMarkers } =
-    useContext(userMarkerContext)
+  const { userMarkers, reorderMarkers } = useContext(userMarkerContext)
   function dragEndHandler(result) {
     if (!result.destination) {
       return
@@ -14,11 +13,11 @@ const MarkersList = () => {
     const items = Array.from(userMarkers)
     const [reorder] = items.splice(result.source.index, 1)
     items.splice(result.destination.index, 0, reorder)
-    return setUserMarkers(items)
+    reorderMarkers(items)
   }
   return (
     <DragDropContext onDragEnd={dragEndHandler}>
-      <Droppable droppableId="marker">
+      <Droppable droppableId="markers">
         {(provided) => (
           <ul
             {...provided.droppableProps}

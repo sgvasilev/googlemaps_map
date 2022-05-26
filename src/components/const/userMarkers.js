@@ -1,0 +1,6 @@
+export const ADD_MARKER = "ADD_MARKER"
+export const INITIAL_STATE = "INITIAL_STATE"
+export const DELETE_MARKER = "DELETE_MARKER"
+export const REORDER_MARKERS = "REORDER_MARKERS"
+export const MARKER_LIST = "MARKER_LIST"
+export const RENEW_MARKER = "RENEW_MARKER"

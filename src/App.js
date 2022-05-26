@@ -1,25 +1,31 @@
 import "./App.css"
-import React, { useEffect, useState } from "react"
-import Form from "./components/Form"
-import Map from "./components/Map"
+import React from "react"
 import { UserMarkersProvider } from "./context/userMarkers"
-import MapLoader from "./components/MapLoader"
+import { Wrapper, Status } from "@googlemaps/react-wrapper"
+
+import MapAndMarkers from "./components/MapAndMarkers/MapAndMarkers"
+import Loader from "./components/Loader/Loader"
+import Error from "./components/Error/Error"
 
 function App() {
-  let map
-  const myMapLoader = async () => {
-    return (map = await MapLoader())
+  const render = (status = Status.SUCCESS) => {
+    switch (status) {
+      case Status.LOADING:
+        return <Loader />
+      case Status.FAILURE:
+        return <Error />
+      case Status.SUCCESS:
+        return (
+          <UserMarkersProvider data-testid="success">
+            <MapAndMarkers />
+          </UserMarkersProvider>
+        )
+      default:
+        return <Loader />
+    }
   }
-  let data = myMapLoader()
 
-  return (
-    <UserMarkersProvider>
-      <section className="userrouting">
-        <Form />
-        <Map data={data} />
-      </section>
-    </UserMarkersProvider>
-  )
+  return <Wrapper libraries={["places"]} render={render} apiKey=""></Wrapper>
 }
 
 export default App

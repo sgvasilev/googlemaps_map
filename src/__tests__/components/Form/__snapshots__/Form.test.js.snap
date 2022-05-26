@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should properly render Form component renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+    }
+  }
+>
+  <form
+    className="userrouting__form"
+  >
+    <label
+      className="sc-gsDKAQ bHVlRh"
+    >
+      <button
+        onClick={[Function]}
+      >
+        add mock
+      </button>
+      <input
+        className="userrouting__input"
+        data-testid="input"
+        id="autocomplete"
+        onChange={[Function]}
+        placeholder="Новая точка маршрута"
+        type="text"
+      />
+      
+    </label>
+  </form>
+  <ul
+    data-rbd-droppable-context-id="0"
+    data-rbd-droppable-id="markers"
+    style={
+      Object {
+        "listStyle": "none",
+        "paddingInlineStart": "8px",
+      }
+    }
+  />
+</div>
+`;
