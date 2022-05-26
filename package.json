@@ -3,27 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@googlemaps/js-api-loader": "^1.13.1",
     "@googlemaps/react-wrapper": "^1.1.20",
-    "@reduxjs/toolkit": "^1.7.1",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
     "animejs": "^3.2.1",
     "axios": "^0.24.0",
-    "express": "^4.18.1",
     "lodash.debounce": "^4.0.8",
     "nodemon": "^2.0.16",
     "react": "^17.0.2",
     "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
-    "react-redux": "^7.2.6",
     "react-scripts": "5.0.0",
-    "react-test-renderer": "^17.0.2",
     "styled-components": "^5.3.3",
-    "uuid": "^8.3.2",
-    "web-vitals": "^2.1.3"
+    "uuid": "^8.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
